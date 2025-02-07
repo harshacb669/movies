@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+/* Navigation */
+header {
+    background: #000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('hero-bg.jpg') center/cover no-repeat;
+}
+
+/* Movie & TV Show Sections */
+/* Adjust images inside movie and TV show cards */
+.movie-card img, .tv-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect to scale images */
+.movie-card:hover img, .tv-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Ensure movie and TV show cards have a uniform size */
+.movie-card, .tv-card {
+    background: #222;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-card p, .tv-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Grid layout for movies and TV shows */
+.movie-grid, .tv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+
+#contact {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #b20710;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .movie-grid, .tv-grid {
+        grid-template-columns: 1fr;
+    }
+}
